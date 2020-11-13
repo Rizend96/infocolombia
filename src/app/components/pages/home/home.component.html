@@ -1,39 +1,18 @@
-<h1 class="title">Info Colombia</h1>
-<div class="contentInt">
+<div class="contenedor">
 
+    <div>
+      <h1 class="title">Info Colombia</h1>
+      <p>Info Colombia es un sitio enfocado en compartir noticias e información sobre la
+        defensa y seguridad del pais.</p>
+    </div>
 
-  <br>
-  <p class="text-int">Info Colombia es un sitio enfocado en compartir noticias e información sobre la
-    defensa y seguridad del pais.</p>
-  <table align="center">
-    <tr>
-      <td class="celdas">
-        <figure class="image fade">
-          <img class="imgHome" src="https://www.infodefensa.com/latam/images_cache/2018/08/09/00-41-520.jpg">
-          <figcaption>Hunter TR-12</figcaption>
-        </figure>
-      </td>
-      <td class="celdas">
-        <figure class="image fade">
-          <img class="imgHome" src="https://i.imgur.com/aM4oE3W.jpg">
-          <figcaption>Vehículo Táctico Cobra</figcaption>
-        </figure>
-      </td>
-      <td class="celdas">
-        <figure class="image fade">
-          <img class="imgHome" src="https://www.fuerzasmilitares.org/images/fotos-opinion/articulos-056.jpg">
-          <figcaption>OPV ARC "7 de Agosto"</figcaption>
-        </figure>
-      </td>
-      <td class="celdas">
-        <figure class="image fade">
-          <img class="imgHome" src="https://4.bp.blogspot.com/-aRxS4uTIEyY/ULYNzfW6UQI/AAAAAAABEII/7Rqef2vrhlM/s1600/800px-Salon_du_Bourget_20090619_223.jpg">
-          <figcaption>Patrullera fluvial LPR-40</figcaption>
-        </figure>
-
-      </td>
-    </tr>
-  </table>
+    <div class="contenedorInt">
+      <nz-carousel nzAutoPlay>
+        <div nz-carousel-content *ngFor="let item of imagesHome">
+          <img class="imgHome" src="{{item.imagen}}" alt="">
+        </div>
+      </nz-carousel>
+    </div>
 
 </div>
 

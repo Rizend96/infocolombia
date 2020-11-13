@@ -1,13 +1,14 @@
-<nz-layout class="layout" >
+<body>
 
-  <nz-layout class="right-layout">
-    <app-header></app-header>
-
-    <nz-content>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
-    </nz-content>
-    <app-footer></app-footer>
-  </nz-layout>
-</nz-layout>
+<header>
+  <app-header></app-header>
+</header>
+<article>
+  <div class="inner-content">
+    <router-outlet></router-outlet>
+  </div>
+</article>
+<footer>
+  <app-footer></app-footer>
+</footer>
+</body>

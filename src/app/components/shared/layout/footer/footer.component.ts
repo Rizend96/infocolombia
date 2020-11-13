@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
+
+  pie = 'Pagina creada por Oscar ©2020 usando Angular';
 
   ngOnInit() {
   }
