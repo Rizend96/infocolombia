@@ -1,23 +1,38 @@
 <div class="contenedor">
 
-
   <div class="formulario">
     <h1 class="title">Contactanos</h1>
     <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
         <nz-form-item>
-          <nz-form-label [nzSpan]="7" nzRequired>Nombre</nz-form-label>
+          <nz-form-label [nzSpan]="7" nzRequired>Nombres</nz-form-label>
           <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Comprobando..." [nzErrorTip]="userErrorTpl">
             <input nz-input formControlName="userName" placeholder="Ingrese su nombre" />
             <ng-template #userErrorTpl let-control>
               <ng-container *ngIf="control.hasError('required')">
-                Please input your username!
+                Completa este campo!
               </ng-container>
-              <ng-container *ngIf="control.hasError('duplicated')">
-                The username is redundant!
-              </ng-container>
+<!--              <ng-container *ngIf="control.hasError('duplicated')">-->
+<!--                The username is redundant!-->
+<!--              </ng-container>-->
             </ng-template>
           </nz-form-control>
         </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Apellidos</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Comprobando..." [nzErrorTip]="userErrorTpl">
+          <input nz-input formControlName="lastName" placeholder="Ingrese su apellido" />
+          <ng-template #userErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">
+              Completa este campo!
+            </ng-container>
+<!--            <ng-container *ngIf="control.hasError('duplicated')">-->
+<!--              The username is redundant!-->
+<!--            </ng-container>-->
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
         <nz-form-item>
           <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
           <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
@@ -39,7 +54,7 @@
             <textarea formControlName="comment" nz-input rows="2" placeholder="Escribe algun comentario"></textarea>
           </nz-form-control>
         </nz-form-item>
-        <nz-form-item>
+        <nz-form-item class="botones">
           <nz-form-control [nzOffset]="7" [nzSpan]="12">
             <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
             <button nz-button (click)="resetForm($event)">Reset</button>
@@ -48,12 +63,14 @@
       </form>
     </div>
 
+
     <div class="mapaExt">
       <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13233.607877773793!2d-73.33103833762843!3d9.562892170165885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e607c67aae56031%3A0xdfbbd7d22b2bd9e8!2sLa%20Jag%C3%BCa%20de%20Ibirico%2C%20La%20Jagua%20de%20Ibirico%2C%20Cesar!5e0
       !3m2!1ses!2sco!4v1602784064840!5m2!1ses!2sco" frameborder="0"
               style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
 </div>
+
 
 
 

@@ -1,4 +1,4 @@
-<div *ngFor="let item of noticeService.notices">
+<div *ngFor="let item of noticeService.notices; let i = index" >
   <div class="notice_1" >
     <h2 class="title-new">
       {{item.titulo}}
@@ -6,12 +6,12 @@
     <img class="imgNew" src="{{item.imagen}}" alt="">
     <br><br>
     <p>
-      {{item.contenido}}
+      {{item.resumen}}
       <br>
     </p>
+    <a routerLink="/leermas/{{i}}" (click)="funcion(i)">Leer mas..</a>
   </div>
   <br>
   </div>
-
 
 

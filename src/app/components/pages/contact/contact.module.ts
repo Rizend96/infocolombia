@@ -5,7 +5,7 @@ import {LayoutModule} from '../../shared/layout/layout.module';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {ContactComponent} from './contact.component';
 import {ContactPageRoutingModule} from './contact-routing.module';
-import {Person} from "../../../models/person";
+
 
 @NgModule({
     imports: [

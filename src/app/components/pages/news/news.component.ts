@@ -14,6 +14,13 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
   }
 
+  pos = this.noticeService.pos;
+
+  funcion(i){
+    localStorage.setItem('pos',JSON.stringify(i));
+    this.noticeService.pos = i;
+  }
+
 
 }
 

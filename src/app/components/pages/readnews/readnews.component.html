@@ -1,0 +1,65 @@
+
+  <div *ngIf="pos">
+    <div class="notice_1" >
+      <h2 class="title-new">
+        {{noticeService.notices[pos].titulo}}
+      </h2>
+      <img class="imgNew" src="{{noticeService.notices[pos].imagen}}" alt="">
+      <br><br>
+      <p>
+        {{noticeService.notices[pos].contenido}}
+        <br>
+      </p>
+
+
+    </div>
+    <br>
+
+    <div class="notice_1" >
+      <div class="formulario">
+        <h1 class="title">Zona de comentarios</h1>
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="7" nzRequired>Nombre</nz-form-label>
+            <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Comprobando..." [nzErrorTip]="userErrorTpl">
+              <input nz-input formControlName="nombre" placeholder="Ingrese su nombre" />
+              <ng-template #userErrorTpl let-control>
+                <ng-container *ngIf="control.hasError('required')">
+                  Ingresa un nombre!
+                </ng-container>
+                <ng-container *ngIf="control.hasError('duplicated')">
+                  The username is redundant!
+                </ng-container>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-label [nzSpan]="7" nzRequired>Comentario</nz-form-label>
+            <nz-form-control [nzSpan]="12" nzErrorTip="Escribe algo..">
+              <textarea formControlName="comment" nz-input rows="2" placeholder="Escribe algun comentario"></textarea>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control [nzOffset]="7" [nzSpan]="12">
+              <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+              <button nz-button (click)="resetForm($event)">Reset</button>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </div>
+      <nz-divider></nz-divider>
+      <div *ngFor="let item of this.noticeService.notices[this.pos].comentarios">
+        <p style="font-weight: bold">{{item.nombre}}</p>
+        <p>Publicado {{item.fecha | date:'medium'}}</p>
+        <p>{{item.comment}}</p>
+        <nz-divider></nz-divider>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+

@@ -4,6 +4,7 @@ import {PagesComponent} from './pages.component';
 
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +22,15 @@ const routes: Routes = [
         path: 'contacto',
         loadChildren: () => import('./contact/contact.module').then(n => n.ContactPageModule),
       },
+      {
+        path: 'leermas/:code',
+        loadChildren: () => import('./readnews/readnews.module').then(s => s.ReadNewsPageModule),
+
+      },
+      // {
+      //   path: 'leermas',
+      //   loadChildren: () => import('./readnews/readnews.module').then(s => s.ReadNewsPageModule),
+      // }
     ]
   }];
 
