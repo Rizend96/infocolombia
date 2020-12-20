@@ -4,20 +4,20 @@
     <h1>Iniciar sesion</h1>
     <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm(validateForm.value)">
       <nz-form-item>
-        <nz-form-control nzErrorTip="Please input your username!">
+        <nz-form-control nzErrorTip="Ingresa tu codigo">
           <nz-input-group nzPrefixIcon="user">
             <input type="text" nz-input formControlName="code" placeholder="Codigo" />
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-form-control nzErrorTip="Ingresa tu contraseña">
           <nz-input-group nzPrefixIcon="lock">
             <input type="password" nz-input formControlName="password" placeholder="Password" />
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
-      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Iniciar</button>
     </form>
   </div>
 
