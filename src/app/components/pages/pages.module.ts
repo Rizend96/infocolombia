@@ -6,7 +6,6 @@ import {LayoutModule} from '../shared/layout/layout.module';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {PagesRoutingModule} from './pages-routing.module';
 import {PagesComponent} from './pages.component';
-import { ReadnewsComponent } from './readnews/readnews.component';
 
 
 

@@ -1,5 +1,40 @@
-
+import {Injectable} from "@angular/core";
+import {HttpClient} from '@angular/common/http';
+import {AuthServices} from './auth.service';
+@Injectable({
+  providedIn: "root"
+})
 export class NoticesService{
+
+
+  constructor(
+    private httpClient: HttpClient,
+    private authService: AuthServices
+  ) { }
+
+  product(){
+    return this.httpClient.get(this.authService.API + 'product/all', {headers: this.authService.headers});
+  }
+
+  asignar_array(){
+    this.product().subscribe((Noticias)=>{
+      let noticiasdatos = Noticias['data'];
+      localStorage.setItem('Noticias', JSON.stringify(noticiasdatos))
+      this.arraynotices=JSON.parse(localStorage.getItem('Noticias'))
+      console.log(this.arraynotices)
+
+    })
+  }
+
+
+
+  arraynotices:any;
+
+  arraydetail:any;
+
+
+
+
 
   notices:any[] = [
     {
@@ -74,7 +109,6 @@ export class NoticesService{
 
   pos = null;
 
-  comentario=[];
 
 }
 

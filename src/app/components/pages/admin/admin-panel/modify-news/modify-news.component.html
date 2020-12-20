@@ -1,0 +1,61 @@
+<div class="formulario">
+
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>ID</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Pon el ID ">
+        <input nz-input type="text" formControlName="product_id"/>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Nombre Proyecto</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Pon el nombre del proyecto!">
+        <input nz-input type="text" formControlName="nombre_proyecto"/>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Titulo</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Verificando..." [nzErrorTip]="userErrorTpl">
+        <input nz-input formControlName="titulo" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')">
+            Debes ingresar el titulo!
+          </ng-container>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Imagen</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="No has Ingresado nada!">
+        <input nz-input type="text" formControlName="imagen"/>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Resumen</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzErrorTip="Escribe el resumen..">
+        <textarea formControlName="resumen" nz-input rows="2" ></textarea>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Contenido</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzErrorTip="Escribe el contenido...">
+        <textarea formControlName="descripcion" nz-input rows="2" ></textarea>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="12">
+        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+        <button nz-button (click)="resetForm($event)">Reset</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+
+</div>

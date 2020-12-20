@@ -27,10 +27,10 @@ const routes: Routes = [
         loadChildren: () => import('./readnews/readnews.module').then(s => s.ReadNewsPageModule),
 
       },
-      // {
-      //   path: 'leermas',
-      //   loadChildren: () => import('./readnews/readnews.module').then(s => s.ReadNewsPageModule),
-      // }
+      {
+         path: 'admin',
+         loadChildren: () => import('./admin/admin.module').then(s => s.AdminPageModule),
+       },
     ]
   }];
 

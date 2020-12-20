@@ -1,0 +1,29 @@
+<div class="cuerpo">
+
+  <div class="cuerpoInt">
+    <div class="menu">
+      <nz-sider nzWidth="200px" nzTheme="light">
+        <ul nz-menu nzMode="inline" class="sider-menu">
+          <li nz-submenu nzOpen nzTitle="Noticias" nzIcon="file-add">
+            <ul>
+              <li nz-menu-item routerLink="createnotice">Añadir Noticia</li>
+              <li nz-menu-item routerLink="updatenotice">Modificar Noticia</li>
+              <li nz-menu-item routerLink="deletenotice">Borrar Noticias</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Opciones" nzIcon="user-delete">
+            <ul>
+              <li nz-menu-item (click)="salir()">Salir</li>
+            </ul>
+          </li>
+        </ul>
+      </nz-sider>
+    </div>
+    <nz-content class="inner-content">
+      <router-outlet></router-outlet>
+    </nz-content>
+  </div>
+
+
+  </div>
+

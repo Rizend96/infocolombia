@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {LayoutModule} from './components/shared/layout/layout.module';
+import {AdminPanelComponent} from "./components/pages/admin/admin-panel/admin-panel.component";
+
 
 
 registerLocaleData(localePy, 'es');

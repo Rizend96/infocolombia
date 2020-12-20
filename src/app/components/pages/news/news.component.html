@@ -1,17 +1,22 @@
-<div *ngFor="let item of noticeService.notices; let i = index" >
+<div *ngFor="let item of noticeService.arraynotices; let i = index" >
+
+<div *ngIf="item.nombreProyecto == nombre">
   <div class="notice_1" >
     <h2 class="title-new">
       {{item.titulo}}
     </h2>
-    <img class="imgNew" src="{{item.imagen}}" alt="">
+    <br>
+<!--    <p>{{item.id}}</p>-->
+        <img class="imgNew" src="{{item.imagen}}" alt="">
     <br><br>
     <p>
-      {{item.resumen}}
+      {{item.descripcion}}
       <br>
     </p>
-    <a routerLink="/leermas/{{i}}" (click)="funcion(i)">Leer mas..</a>
+<!--    <a routerLink="/leermas/{{item.id}}" (click)="funcion(item.id)">Leer mas..</a>-->
   </div>
   <br>
-  </div>
 
+  </div>
+</div>
 

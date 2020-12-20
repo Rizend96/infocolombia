@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {AppComponent} from './app.component';
 import {NotFoundComponent} from './components/shared/not-found/not-found.component';
+import {AdminPanelComponent} from './components/pages/admin/admin-panel/admin-panel.component';
 
 const routes: Routes = [
   {
@@ -12,8 +13,16 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./components/pages/pages.module').then(m => m.PageModule),
       },
+      {
+        path: 'panel',
+        loadChildren: () => import('./components/pages/admin/admin-panel/admin-panel.module').then(m => m.AdminPanelPageModule),
+      },
     ]
   },
+  // {
+  //   path: 'adminpanel',
+  //   component: AdminPanelComponent,
+  // },
   {
     path: '**',
     component: NotFoundComponent,
